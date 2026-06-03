@@ -42,6 +42,10 @@ app.use("/api/mahasiswa", mahasiswaRoutes);
 app.use("/api/prodi", prodiRoutes);
 app.use("/api/pinjam", pinjamRoutes);
 
+app.get("/",(req, res) => {
+    res.json({ message: "Halo coba backend untuk vercel" });
+});
+
 app.listen(5000, () => {
     console.log("Server berjalan di port 5000");
 });
