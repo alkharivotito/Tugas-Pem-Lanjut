@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
-import mysql2 from "mysql2"
+import mysql2 from "mysql2";
+
 const db = new Sequelize('bukumahapro', 'root', '', {
       host: "localhost",
       dialect: "mysql",
