@@ -36,7 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 // Register Routes
 // app.use("/api/user", userRoutes);
 app.use("/api/user", routerUser);
-app.use(authenticateToken);
+// app.use(authenticateToken);
 app.use("/api/buku", bukuRoutes);
 app.use("/api/mahasiswa", mahasiswaRoutes);
 app.use("/api/prodi", prodiRoutes);

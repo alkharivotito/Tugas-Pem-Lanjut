@@ -11,7 +11,7 @@ import {
 } from "../controllers/pinjam.controllers.js";
 
 const router = express.Router();
-router.get("/laporan-return", laporanReturnBuku);
+router.get("/laporan-return", authenticateToken, laporanReturnBuku);
 router.get("/dpinjam/:nim",cariBukuPinjam);
 router.post("/kembali",returnBuku);
 
