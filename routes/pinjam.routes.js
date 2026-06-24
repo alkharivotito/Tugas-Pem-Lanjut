@@ -13,8 +13,8 @@ import {
 
 const router = express.Router();
 router.get("/laporan-return", authenticateToken, laporanReturnBuku);
-router.get("/dpinjam/:nim",cariBukuPinjam);
-router.post("/kembali",returnBuku);
+router.get("/dpinjam/:nim",authenticateToken, cariBukuPinjam);
+router.post("/kembali",authenticateToken, returnBuku);
 
 router.get("/", getAllPinjam);
 router.post("/", insertPinjam);
