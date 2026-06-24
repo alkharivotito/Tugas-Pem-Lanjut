@@ -29,7 +29,7 @@ export const deleteUser = async (req, res) => {
   try {
     const products = await User.destroy({
       where: {
-        user_id: req.params.id
+        id: req.params.id
       }
     });
     res.json({ "message": "User berhasil dihapus" });
