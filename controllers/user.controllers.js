@@ -2,6 +2,15 @@ import User from "../models/model.user.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
+export const getAllUser=async (req, res)=>{
+    try {
+        const products= await user.findAll();
+        res.json(products);
+    } catch (error) {
+        res.json({message:error.message});
+    }
+};
+
 export const tambahuser = async (req, res) => {
     
     try {
