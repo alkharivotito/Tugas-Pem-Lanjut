@@ -7,14 +7,15 @@ import {
     updateDetailPinjam,
     deleteDetailPinjam
 } from "../controllers/detail_pinjam.controllers.js";
+import { authenticateToken } from "../middleware/VerifyTokens.js";
 
 
 const router = express.Router();
-router.get("/", getAllDetailPinjam);
-router.post("/", tambahdetailpinjambaru);
-router.get("/:id", cariDetailPinjamByID);
-router.patch("/:id", updateDetailPinjam);
-router.delete("/:id", deleteDetailPinjam);
+router.get("/",authenticateToken, getAllDetailPinjam);
+router.post("/",authenticateToken, tambahdetailpinjambaru);
+router.get("/:id",authenticateToken, cariDetailPinjamByID);
+router.patch("/:id",authenticateToken, updateDetailPinjam);
+router.delete("/:id",authenticateToken, deleteDetailPinjam);
 
 
 export default router;

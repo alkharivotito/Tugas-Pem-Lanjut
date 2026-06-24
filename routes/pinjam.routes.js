@@ -16,9 +16,9 @@ router.get("/laporan-return", authenticateToken, laporanReturnBuku);
 router.get("/dpinjam/:nim",authenticateToken, cariBukuPinjam);
 router.post("/kembali",authenticateToken, returnBuku);
 
-router.get("/", getAllPinjam);
-router.post("/", insertPinjam);
-router.get("/:id", cariPinjamByID);
-router.delete("/:id", deletePinjam);
+router.get("/",authenticateToken, getAllPinjam);
+router.post("/",authenticateToken, insertPinjam);
+router.get("/:id",authenticateToken, cariPinjamByID);
+router.delete("/:id",authenticateToken, deletePinjam);
 
 export default router;
