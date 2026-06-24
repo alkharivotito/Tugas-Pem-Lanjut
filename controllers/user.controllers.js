@@ -25,6 +25,19 @@ export const tambahuser = async (req, res) => {
     }
 };
 
+export const deleteUser = async (req, res) => {
+  try {
+    const products = await User.destroy({
+      where: {
+        kode_buku: req.params.id
+      }
+    });
+    res.json({ "message": "User berhasil dihapus" });
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+};
+
 export const login = async (req, res) => {
     try {
         const { username, password } = req.body;
